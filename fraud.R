@@ -1,32 +1,26 @@
-install.packages("tidyverse")
 library(tidyverse)
-install.packages("caret")
 library(caret)
-install.packages("randomForest")
 library(randomForest)
+
 #Preprocessing Data
 data <-read.csv("creditcard.csv", header =T)
 sum(is.na(data))
 summary(data)
 
 data$Class <- as.factor(data$Class)
+#R takes the first value of the label as the positive class, so make sure you choose the positive class as the first level
 data$Class <- factor(data$Class, levels = c("1", "0"),labels = c("Fraud", "Normal"))
 plot(data$Class)
 tapply(data$Amount, data$Class, summary)
-data$Normal <- ifelse(data$Class == "Normal", 1, 0)
-data$Fraud <- ifelse(data$Class == "Fraud", 1, 0)
-sum(data$Normal)
-sum(data$Fraud)
-data$Class[data$Class == 1] <- "Fraud"
 
 #Model Building
-
 x <- subset(data, select =c(-Class)) 
 y <- subset(data, select = Class)
 nrow(x)
 nrow(y)
 head(x)
 
+#Modeling
 trainIndex <- createDataPartition(data$Class, p = .7, list = F)
 train <- data[trainIndex, ]
 test <- data[-trainIndex, ]
@@ -44,6 +38,7 @@ testX <- test[, c("Time", "V1", "V2", "V3", "V4", "V5", "V6",
                   "V28", "Amount")]
 testY <- test$Class 
 
+#Random Forest Model
 model <- randomForest(x = trainX, y=trainY, ntree = 100)
 predictions <- predict(model, newdata = testX)
 CM <- confusionMatrix(data = predictions, reference = testY)

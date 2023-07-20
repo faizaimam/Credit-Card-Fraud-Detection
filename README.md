@@ -89,6 +89,33 @@ CM
 accuracy <- CM$overall["Accuracy"]
 accuracy
 ```
+Output:
+```
+ Confusion Matrix and Statistics
+
+          Reference
+Prediction Fraud Normal
+    Fraud    120      7
+    Normal    27  85287
+                                          
+               Accuracy : 0.9996          
+                 95% CI : (0.9994, 0.9997)
+    No Information Rate : 0.9983          
+    P-Value [Acc > NIR] : < 2e-16         
+                  Kappa : 0.8757          
+ Mcnemar's Test P-Value : 0.00112         
+            Sensitivity : 0.816327        
+            Specificity : 0.999918        
+         Pos Pred Value : 0.944882        
+         Neg Pred Value : 0.999684        
+             Prevalence : 0.001720        
+         Detection Rate : 0.001404        
+   Detection Prevalence : 0.001486        
+      Balanced Accuracy : 0.908122        
+                                          
+       'Positive' Class : Fraud
+```          
+
 
 From the output, we get,
 

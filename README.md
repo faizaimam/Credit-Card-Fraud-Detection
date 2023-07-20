@@ -24,7 +24,6 @@ It contains only numerical input variables which are the result of a PCA transfo
 
 ```{r comment = ""}
 data <-read.csv("creditcard.csv", header =T)
-data
 ```
 
 
@@ -36,7 +35,6 @@ R takes the first value of the label as the positive class by default, so make s
 ```{r comment = ""}
 data$Class <- as.factor(data$Class)
 data$Class <- factor(data$Class, levels = c("1", "0"),labels = c("Fraud", "Normal"))
-head(data)
 ```
 
 ### 3. Modeling

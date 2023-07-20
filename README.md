@@ -1,8 +1,4 @@
----
-output: 
-  html_document:
-    df_print: paged
----
+
 ## Credit Card Fraud Detection Model
 
 ### 1. Packages

@@ -98,34 +98,34 @@ accuracy
 
 From the output, we get,
 
-Confusion Matrix:
+**Confusion Matrix:**
 True Positive (Fraud): 120
 False Negative (Normal predicted as Fraud): 7
 False Positive (Fraud predicted as Normal): 27
 True Negative (Normal): 85,287
 
-Accuracy: 
+**Accuracy:** 
 Accuracy measures the overall correctness of the model's predictions. The overall accuracy of the model is 0.9996, indicating that it correctly predicts 99.96% of the instances.
 
-No Information Rate:
+**No Information Rate:**
 The no information rate represents the accuracy achieved by a naive model that always predicts the most prevalent class. The proportion of the majority class (Normal) is 0.9983.
 
-Kappa:
+**Kappa:**
 Kappa is a statistic that measures the agreement between the predicted and actual classes, considering the agreement that could be expected by chance alone. In this case, the Kappa value is 0.8757, which indicates a substantial level of agreement beyond what would be expected by chance.
 
-Sensitivity, Specificity, Positive Predictive Value, Negative Predictive Value:
+**Sensitivity, Specificity, Positive Predictive Value, Negative Predictive Value:**
 These measure the model's performance in terms of correctly identifying positive and negative instances.
 
-Sensitivity: 
+**Sensitivity:** 
 Sensitivity, also known as recall or true positive rate, measures the proportion of actual positive instances (Fraud) correctly identified by the model. Here the sensitivity is 0.816327, indicating that the model correctly identifies 81.63% of the actual fraud cases.
 
-Specificity:
+**Specificity:**
 Specificity measures the proportion of actual negative instances (Normal) correctly identified by the model. A specificity of 0.999918 indicates a high level of accuracy in identifying normal instances.
 
-Prevalence, Detection Rate:
+**Prevalence, Detection Rate:**
 Prevalence represents the proportion of positive instances (Fraud) in the dataset. Here the prevalence is 0.001720 or 0.17%. The detection rate measures the proportion of actual positive instances (Fraud) that are correctly identified by the model. In this case, the detection rate is 0.001404 or 0.14%.
 
-Balanced Accuracy:
+**Balanced Accuracy:**
 Balanced accuracy takes into account the performance on both positive and negative classes and provides an overall measure of model accuracy. A balanced accuracy of 0.908122 indicates a good performance in predicting both fraud and normal instances.
 
 Based on these results, the model appears to have a high overall accuracy and performs well in identifying normal instances. 
